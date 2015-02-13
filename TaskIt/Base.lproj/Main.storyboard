@@ -134,7 +134,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eLv-bu-5Gz">
-                                <rect key="frame" x="0.0" y="233" width="600" height="162"/>
+                                <rect key="frame" x="0.0" y="233" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="445522500.34000599">
                                     <!--2015-02-13 12:15:00 +0000-->
                                 </date>
