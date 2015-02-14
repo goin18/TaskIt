@@ -99,8 +99,7 @@
 				D330EB341A8DDD1D000F9933 /* Main.storyboard */,
 				D330EB371A8DDD1D000F9933 /* Images.xcassets */,
 				D330EB391A8DDD1D000F9933 /* LaunchScreen.xib */,
-				D330EB2F1A8DDD1D000F9933 /* TaskIt.xcdatamodeld */,
-				D3774C2D1A8E49CC0077EDE9 /* TaskModel.swift */,
+				D3C0265E1A8F498900E70C0C /* Model */,
 				D330EB2B1A8DDD1D000F9933 /* Supporting Files */,
 			);
 			path = TaskIt;
@@ -130,6 +129,15 @@
 				D330EB451A8DDD1D000F9933 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D3C0265E1A8F498900E70C0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D330EB2F1A8DDD1D000F9933 /* TaskIt.xcdatamodeld */,
+				D3774C2D1A8E49CC0077EDE9 /* TaskModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

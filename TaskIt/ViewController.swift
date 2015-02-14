@@ -88,10 +88,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "To Do:"
+        
+        if self.ferchResultsController.sections?.count == 1 {
+            let fetchedObject = self.ferchResultsController.fetchedObjects!
+            let testTask = fetchedObject[0] as TaskModel
+        
+            if testTask.completed == true {
+                return "Completed:"
+            }else {
+                return "To do:"
+            }
         }else {
-            return "Complited:"
+            if section == 0 {
+                return "To Do:"
+            }else {
+                return "Complited:"
+            }
         }
     }
     
@@ -99,11 +111,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         let thisTask = ferchResultsController.objectAtIndexPath(indexPath) as TaskModel
         
-        if indexPath.section == 0 {
-            thisTask.completed = true
-
-        }else{
+        if thisTask.completed == true {
             thisTask.completed = false
+        }else {
+            thisTask.completed = true
         }
         (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
         
