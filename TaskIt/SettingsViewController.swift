@@ -19,6 +19,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+        
         self.capitalizeTableView.delegate = self
         self.capitalizeTableView.dataSource = self
         self.capitalizeTableView.scrollEnabled = false

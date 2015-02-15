@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+        
         ferchResultsController =  getFetchedResultsController()
         ferchResultsController.delegate = self
         ferchResultsController.performFetch(nil)
@@ -85,6 +87,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+            cell.backgroundColor = UIColor.clearColor()
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
