@@ -9,12 +9,18 @@
 import UIKit
 import CoreData
 
+protocol AddTaskViewControllerDelegate {
+    func addTask(message: String)
+    func addTaskCanceled(message: String)
+}
+
 class AddTaskViewController: UIViewController {
     
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var subTaskTextField: UITextField!
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
+    var delegate: AddTaskViewControllerDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +34,9 @@ class AddTaskViewController: UIViewController {
     
     @IBAction func cancelButtonTapped(sender: UIButton) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+           self.delegate.addTaskCanceled("Task was not added")
+        })
     }
 
     @IBAction func addTaskButtonTapped(sender: UIButton) {
@@ -38,10 +46,22 @@ class AddTaskViewController: UIViewController {
         let entityDescription = NSEntityDescription.entityForName("TaskModel", inManagedObjectContext: managedObjectContext!)
         let taskModel = TaskModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
 
-        taskModel.task = taskTextField.text
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCapitalizeTaskKey) == true {
+            taskModel.task = taskTextField.text.capitalizedString
+        }else {
+            taskModel.task = taskTextField.text
+        }
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey(kShouldCompleteNewTodoKey) == true {
+            taskModel.completed = true
+        }else {
+            taskModel.completed = false
+        }
+        
         taskModel.subtask = subTaskTextField.text
         taskModel.date = dueDatePicker.date
-        taskModel.completed = false
+        
         
         appDelegete.saveContext()
         
@@ -54,7 +74,9 @@ class AddTaskViewController: UIViewController {
             println(res)
         }
         
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            self.delegate.addTask("Task Added")
+        })
         
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

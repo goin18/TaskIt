@@ -19,6 +19,7 @@
 		D330EB571A8E1E07000F9933 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330EB561A8E1E07000F9933 /* Date.swift */; };
 		D330EB591A8E2136000F9933 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D330EB581A8E2136000F9933 /* AddTaskViewController.swift */; };
 		D3774C2E1A8E49CC0077EDE9 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3774C2D1A8E49CC0077EDE9 /* TaskModel.swift */; };
+		D3C026941A8F646500E70C0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C026931A8F646500E70C0C /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D330EB581A8E2136000F9933 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		D330EB5A1A8E47A7000F9933 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D3774C2D1A8E49CC0077EDE9 /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		D3C026931A8F646500E70C0C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				D330EB321A8DDD1D000F9933 /* ViewController.swift */,
 				D330EB541A8E1A90000F9933 /* TaskDetailViewController.swift */,
 				D330EB581A8E2136000F9933 /* AddTaskViewController.swift */,
+				D3C026931A8F646500E70C0C /* SettingsViewController.swift */,
 				D330EB501A8E155B000F9933 /* TaskCell.swift */,
 				D330EB561A8E1E07000F9933 /* Date.swift */,
 				D330EB341A8DDD1D000F9933 /* Main.storyboard */,
@@ -248,6 +251,7 @@
 				D330EB2E1A8DDD1D000F9933 /* AppDelegate.swift in Sources */,
 				D3774C2E1A8E49CC0077EDE9 /* TaskModel.swift in Sources */,
 				D330EB311A8DDD1D000F9933 /* TaskIt.xcdatamodeld in Sources */,
+				D3C026941A8F646500E70C0C /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
